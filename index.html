@@ -2,9 +2,7 @@
 <html lang="en">
     <title>Arty Web OS</title>
     <head>
-      <!--
-      <script src="darkmode.js" defer></script>
-      -->
+      <script src="index.js" defer></script>
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,11 +16,25 @@
   <body style = "background-image: url(./images/FlyingInspoBoard.JPG);  background-size: cover;">
     
     <div class ="top-div">
-        <p>Arty OS</p>
         <p>Like cool stuff I guess...</p>
+        <p style = "cursor: pointer" id = "welcomeOpen">Arty OS</p>
+        <p id="timeDisplay">Time!</p>
     </div>
 
-    <div style="border: solid; width: 70vw; position: absolute; top: 50%; left: 50%;">
+    <div id="desktopApps" class="apps-div">
+        <div class="selected-app-icon" id="icebreakerOpen">
+            <img src="images/iceberg.png">
+        </div>
+    </div>
+
+    <div class="window" id="welcome">
+
+        <div class="top-bar" id = "welcomeHeader">
+            <div class="close-button" id = "welcomeClose">
+            <p>X</p>
+            </div>
+        </div>
+
     <h1><abbr title="A state of being">Arty</abbr> Web OS</h1>
 
     <img src="images/InMotion.jpeg"; width=50%/>
@@ -35,6 +47,25 @@ One who works with their hands, brain, and heart.
 </blockquote>
 </p>
 </div>
+
+<div class="window" id="icebreaker" style="display: none; width:40vw" >
+
+        <div class="top-bar" id = "icebreakerHeader">
+            <div class="close-button" id = "icebreakerClose">
+            <p>X</p>
+            </div>
+        </div>
+
+    <h1>Icebreaker!</h1>
+    <p>
+    Icebreaker Question of the Day:
+<blockquote>
+How do you eat a slice of cake?
+</blockquote>
+</p>
+</div>
+
+
   </body>
 
 </html>
