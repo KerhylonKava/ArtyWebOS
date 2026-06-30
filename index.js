@@ -63,17 +63,24 @@ function dragElement(element) {
 // Call the function
 dragElement(document.getElementById("welcome"));
 dragElement(document.getElementById("icebreaker"));
+dragElement(document.getElementById("teaQuote"))
 
 
 
 // To open and close the windows:
+
+var biggestIndex = 1;
+var topBar = document.querySelector("#topDiv")
 
 function closeWindow(element) {
     element.style.display = "none";
 }
 
 function openWindow(element) {
-    element.style.display = "block";
+  element.style.display = "block";
+  biggestIndex++;  // Increment biggestIndex by 1
+  element.style.zIndex = biggestIndex;
+  topBar.style.zIndex = biggestIndex + 1;
 }
 
 // Welcome screen
@@ -94,6 +101,16 @@ icebreakerScreenClose.addEventListener("click", function() {
 });
 icebreakerScreenOpen.addEventListener("click", function() {
   openWindow(icebreaker);
+});
+
+// Tea Quote screen
+var teaQuoteScreenClose = document.querySelector("#teaQuoteClose")
+var teaQuoteScreenOpen = document.querySelector("#teaQuoteOpen")
+teaQuoteScreenClose.addEventListener("click", function() {
+  closeWindow(teaQuote);
+});
+teaQuoteScreenOpen.addEventListener("click", function() {
+  openWindow(teaQuote);
 });
 
 //Openable Apps
@@ -118,3 +135,23 @@ function handleIconTap(element) {
     selectIcon(element);
   }
 }
+
+// Bring most recent window to top
+
+function handleWindowTap(element) {
+  console.log(element.style.zIndex);
+  biggestIndex++;  // Increment biggestIndex by 1
+  element.style.zIndex = biggestIndex;
+  topBar.style.zIndex = biggestIndex + 1;
+  console.log(element.style.zIndex);
+}
+
+function addWindowTapHandling(element) {
+  element.addEventListener("mousedown", () =>
+    handleWindowTap(element)
+  )
+}
+
+addWindowTapHandling(welcome);
+addWindowTapHandling(icebreaker);
+addWindowTapHandling(teaQuote);

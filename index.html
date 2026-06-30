@@ -15,7 +15,7 @@
 
   <body style = "background-image: url(./images/FlyingInspoBoard.JPG);  background-size: cover;">
     
-    <div class ="top-div">
+    <div id ="topDiv">
         <p>Like cool stuff I guess...</p>
         <p style = "cursor: pointer" id = "welcomeOpen">Arty OS</p>
         <p id="timeDisplay">Time!</p>
@@ -60,11 +60,31 @@ One who works with their hands, brain, and heart.
     <p>
     Icebreaker Question of the Day:
 <blockquote>
-How do you eat a slice of cake?
+<!--How do you eat a slice of cake?-->
+What's the weirdest thing you collect?
 </blockquote>
+<details>
+    <summary>Click to reveal mine...</summary>
+    <br>
+    I collect is the little tea bag tabs
+    <br>
+    that have quotes on them
+    <div id="teaQuoteOpen" class="norm-button">
+        <p>View the one I got today?</p></div>
+</details>
 </p>
 </div>
 
+<div class="window" id="teaQuote" style="display: none; width:20vw" >
+
+        <div class="top-bar" id = "teaQuoteHeader">
+            <div class="close-button" id = "teaQuoteClose">
+            <p>X</p>
+            </div>
+        </div>
+
+    <img src="images/TeaQuote01.png" width="90%">
+</div>
 
   </body>
 
